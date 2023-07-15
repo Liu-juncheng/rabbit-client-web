@@ -15,7 +15,7 @@ export default {
   setup () {
     const { $http } = getCurrentInstance().proxy
     const testRequest = () => {
-      $http.post('member/profile', null, { params: { a: 10 } })
+      $http.get('member/profile', null, { params: { a: 10 } })
         .then(res => {
           console.log('请求成功', res)
         })

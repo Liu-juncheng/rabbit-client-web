@@ -3,7 +3,7 @@ module.exports = {
   env: {
     node: true
   },
-  extends: ['plugin:vue/vue3-essential', '@vue/standard'],
+  extends: ['plugin:vue/vue3-essential'],// '@vue/standard'
   parserOptions: {
     parser: '@babel/eslint-parser'
   },
@@ -19,7 +19,8 @@ module.exports = {
       files: ['*.js', '*.vue'],
       rules: {
         'spaced-comment': 'off',
-        'no-multiple-empty-lines': 'off'
+        'no-multiple-empty-lines': 'off',
+        'vue/multi-word-component-names': 'off'
       }
     }
   ]
