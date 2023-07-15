@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
       <div>{{$store.state.user.profile.account}}</div>
       <button @click="$store.commit('user/setUser',{account:'设置用户信息为:snaape'})">设置用户信息</button>
@@ -15,7 +15,7 @@ export default {
   setup () {
     const { $http } = getCurrentInstance().proxy
     const testRequest = () => {
-      $http.get('member/profile', null, { params: { a: 10 } })
+      $http.post('member/profile', null, { params: { a: 10 } })
         .then(res => {
           console.log('请求成功', res)
         })
@@ -32,7 +32,13 @@ export default {
 </script>
 
   <style lang="less">
-  </style>
+  </style> -->
+
+  <template>
+    <!-- 根组件一级路由路由出口 -->
+    <router-view></router-view>
+  </template>
+
 
 
 

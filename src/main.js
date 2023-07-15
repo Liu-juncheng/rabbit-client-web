@@ -3,12 +3,18 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-//导入请求模块
+//导入封装的请求模块
 import { http } from "./utils/request";
-//组件库
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
+//elemnt-puls组件库
+import ElementPlus from "element-plus";
+import "element-plus/dist/index.css";
 
+//样式重置包  通过npm i normalize.css 下包
+import "normalize.css";
+//自己的公共样式
+import "@/assets/styles/common.less";
+
+//app应用程序实例
 const app = createApp(App);
 
 // 在 app.config.globalProperties进行全局挂载模块
