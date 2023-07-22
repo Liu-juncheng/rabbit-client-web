@@ -14,7 +14,7 @@ module.exports = defineConfig({
       patterns: [
         //path.join() 方法是用于修正路径,例如: ../../路径他是无法识别,而是用.join()则可以修复跳过读取下一级路径！
         //__dirname 表示我们项目的根路径！
-        path.join(__dirname, "./src/assets/styles/variables.less"), //从这个文件路径读取 全局变量
+        path.join(__dirname, "./src/assets/styles/variables.less"), //从这个文件路径读取 全局样书变量
         path.join(__dirname, "./src/assets/styles/mixins.less"), //从这个文件读取全局混入
       ],
     },

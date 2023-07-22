@@ -1,5 +1,5 @@
 
-// 用户模块
+// 用户信息模块
 export default {
   //   //开启命名空间
   namespaced: true,
@@ -11,7 +11,7 @@ export default {
         id: '',
         avatar: '',
         nickname: '',
-        account: '',
+        account: '', //用户名
         mobile: '',
         token: ''
       }

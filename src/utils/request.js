@@ -38,12 +38,16 @@ instance.interceptors.response.use(
         response.data.code === "success" ||
         response.data.state ||
         response.data.success ||
-        response.data.code === 200
+          // 注意这里的返回的数据结构
+        response.data.code === 200 ||
+        response.data.code === '1'
       ) {
         if (response.data.Message) {
           return Promise.reject(response.data.Message);
         }
         return Promise.resolve(
+          // 注意这里的返回的数据结构
+          response.data.result || 
           response.data.data ||
             response.data.Response ||
             response.data.user ||
@@ -65,6 +69,7 @@ instance.interceptors.response.use(
   },
   (err) => {
     if (err && err.response) {
+      console.log("err存在",err)
       switch (err.response.status || err.response.Code) {
         case 400:
           err.message = "请求错误";
@@ -88,6 +93,7 @@ instance.interceptors.response.use(
           break;
         case 404:
           err.message = `请求地址出错: ${err.response.config.url}`;
+          // console.log("我被执行了",err.response.status)
           break;
         case 408:
           err.message = "请求超时";

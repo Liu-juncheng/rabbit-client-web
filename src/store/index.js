@@ -1,19 +1,24 @@
 //数据仓库实例
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 //导入各个模块
-import user from './modules/user'
-import cart from './modules/cart.js'
-import category from './modules/category.js'
+import user from "./modules/user";
+import cart from "./modules/cart.js";
+import category from "./modules/category.js";
+
+//所有store数据的 getter映射
+import getters from "./getters.js";
+
 //导入持久化插件
-import persistedstate from 'vuex-persistedstate'
+import persistedstate from "vuex-persistedstate";
 
 // vue2.8 创建仓库 new Vuex.store({})   new Vuex.store
 // vue3.0 创建仓库 createstore({})       createStore
 export default createStore({
+  getters,
   modules: {
     user,
     cart,
-    category
+    category,
   },
   //pulgins是vuex注册插件的配置
   // 默认是存储在localStorage中
@@ -23,8 +28,8 @@ export default createStore({
   plugins: [
     persistedstate({
       //设置Key,存储在localStorage中的key名
-      key: 'rabbit-client-web',
-      paths: ['user', 'cart']
-    })
-  ]
-})
+      key: "rabbit-client-web",
+      paths: ["user", "cart"],
+    }),
+  ],
+});
