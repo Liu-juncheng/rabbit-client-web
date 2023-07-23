@@ -9,7 +9,19 @@ const routes = [
     children: [
       {
         path: "/",
-        component: () => import("@/views/home/index.vue"),
+        component: () => import("@/views/home/index.vue"), // 首页
+        component: () => import("@/views/category/index.vue"), //二级分类
+        component: () => import("@/views/category/sub.vue"), //二级分类
+      },
+      {
+        //必须通过 <RouterLink :to="`/category/sub/${sub.id}`"/ > 需传递对应的id 才能跳转到指定的页面！
+        //如果不希望通过这个方式跳转,同样可以通过编写函数的形式$router.psuh(/category/sub/${sub.id}`")的方式跳转
+        path: "/category/:id",
+        component: () => import("@/views/category/index.vue"), //二级分类 固定最顶层的分类
+      },
+      {
+        path: "/category/sub/:id", //跳转导致这个指定的页面,必须传递对应的分类的id才行！
+        component: () => import("@/views/category/sub.vue"), //二级分类 悬浮的分类
       },
     ],
   },

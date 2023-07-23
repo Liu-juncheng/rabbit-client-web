@@ -4,8 +4,10 @@
   <AppTopnav/>
    <!--头部组件 -->
   <AppHeader/>
+    <!-- 头部吸顶组件 -->
+  <AppHeaderSticky/>
     <!-- 中间内容容器，中间内容组件需要切换,头部底部大部分不需要动 -->
-    <main class="main-body">
+   <main class="main-body">
       <!-- 二级路由出口,二级路由包含需要切换的商品详情页,个人中心组件等 -->
    <router-view></router-view>
     </main>
@@ -17,6 +19,7 @@
 import AppTopnav from '@/components/app-topnav'
 import AppHeader from '@/components/app-header'
 import AppFooter from '@/components/app-footer'
+import AppHeaderSticky from '@/components/app-header-sticky'
 import { useStore } from 'vuex';
 
   export default {
@@ -24,7 +27,8 @@ import { useStore } from 'vuex';
     components: {
       AppTopnav,
       AppHeader,
-      AppFooter
+      AppFooter,
+      AppHeaderSticky
     },
     setup() {
       //主组件提交一次action.获取所有分类数据
