@@ -1,20 +1,21 @@
 <template>
-    <!-- 二级路由组件 -->
-  <div class="container">
-     homePage
-   </div>
+  <div class="page-home">
+    <div class="home-entry">
+      <div class="container">
+        <!-- 左侧分类 -->
+        <HomeCategory></HomeCategory>
+        <!-- 轮播图 -->
+      </div>
+    </div>
+  </div>
 </template>
- 
 <script>
+import HomeCategory from './components/home-category'  //左侧分类
 export default {
-  name: "xtx-home-page",
-};
-</script>
-
-<style scoped lang="less">
-.container {
-  .hoverShadow();
-  color: @helpColor;
+  name: 'PageHome',
+  components: { HomeCategory }
 }
-     
-</style>
+</script>
+<style scoped lang="less">
+
+</style>  
