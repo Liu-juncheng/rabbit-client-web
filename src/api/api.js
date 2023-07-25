@@ -36,5 +36,6 @@ export const saveDetailByIdAPI = (data) => {
 //3,在公司的项目,封装模式是我喜欢的,我目前按照公司的封装来进行写该函数
 export default {
   //首页模块
-  findAllCategory: "/home/category/head", //获取顶级分类
+  findAllCategory: "/home/category/head", //首页-获取顶级分类
+  getBrandList:"/home/brand"    //首页-左侧导航-品牌分类
 };

@@ -10,12 +10,10 @@
   </div>
 </template>
 <script>
-import HomeCategory from './components/home-category'  //左侧分类
+import HomeCategory from "./components/home-category"; //左侧分类
 export default {
-  name: 'PageHome',
-  components: { HomeCategory }
-}
+  name: "PageHome",
+  components: { HomeCategory },
+};
 </script>
-<style scoped lang="less">
-
-</style>  
+<style scoped lang="less"></style>
