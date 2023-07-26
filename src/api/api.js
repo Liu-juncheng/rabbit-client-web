@@ -7,6 +7,12 @@ export function getUserDetailByIdAPI(id) {
   });
 }
 
+/**
+ *
+ * @param {*} data id参数
+ * @returns Promise
+ */
+
 //更新用户信息
 export const saveDetailByIdAPI = (data) => {
   return request({
@@ -37,5 +43,6 @@ export const saveDetailByIdAPI = (data) => {
 export default {
   //首页模块
   findAllCategory: "/home/category/head", //首页-获取顶级分类
-  getBrandList:"/home/brand"    //首页-左侧导航-品牌分类
+  getBrandList: "/home/brand", //首页-左侧导航-品牌分类
+  getBannerList: "/home/banner", //首页-轮播图图片
 };
