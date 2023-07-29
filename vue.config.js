@@ -31,4 +31,12 @@ module.exports = defineConfig({
       },
     },
   },
+
+  // unplugin-vue-define-options  插件的配置,用于cli脚手架的neme配置
+  //   defineOptions({   //使用该函数进行对组件的name属性进行注册 
+  //   name: 'ComponentName'
+  // })
+  configureWebpack: (config) => {
+    config.plugins.push(require("unplugin-vue-define-options/webpack")());
+   },
 });

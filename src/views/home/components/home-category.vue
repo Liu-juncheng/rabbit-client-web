@@ -19,7 +19,7 @@
             v-for="sub in item.children"
             :key="sub.id"
             >{{ sub.name }}</RouterLink
-          > 
+          >
         </template>
         <!-- 导入骨架屏组件! -->
         <template v-else>
@@ -57,8 +57,7 @@
       <ul
         v-if="currCategory && currCategory.brands && currCategory.brands.length"
       >
-        <li class="brand" v-for="brand in currCategory.brands" 
-        :key="brand.id">
+        <li class="brand" v-for="brand in currCategory.brands" :key="brand.id">
           <RouterLink to="/">
             <img :src="brand.picture" alt="" />
             <div class="info">
@@ -75,9 +74,14 @@
   </div>
 </template>
 
-<script setup>
+<script setup name="HomeCategory">
 import { reactive, computed, ref, getCurrentInstance } from "vue";
 import { useStore } from "vuex";
+
+defineOptions({
+  name: "HomeCategory",
+});
+
 //目前明确知道我们只有九个分类,存储在vuex,我们需要自己手动添加一个分类,并保持统一的数据结构
 //从vuex获取9个分类,,存储在category模块下
 const store = useStore();

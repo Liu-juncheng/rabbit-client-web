@@ -1,4 +1,5 @@
 <template>
+  <!-- 轮播图组件 -->
   <div class="xtx-carousel" @mouseenter="stop()" @mouseleave="start()">
     <ul class="carousel-body">
       <!-- 如果当前图片数组的i === index的索引,这个加载这个类  opacity: 1;z-index: 1;

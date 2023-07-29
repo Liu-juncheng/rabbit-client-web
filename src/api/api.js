@@ -45,4 +45,6 @@ export default {
   findAllCategory: "/home/category/head", //首页-获取顶级分类
   getBrandList: "/home/brand", //首页-左侧导航-品牌分类
   getBannerList: "/home/banner", //首页-轮播图图片
+  getNewList: "home/new", //首页-新鲜好物
+  getHomeList: "home/hot", //首页-人气推荐
 };

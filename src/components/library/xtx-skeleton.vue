@@ -1,4 +1,5 @@
 <template>
+  <!-- 骨架屏组件 -->
   <div
     class="xtx-skeleton"
     :style="{ width, height }"
