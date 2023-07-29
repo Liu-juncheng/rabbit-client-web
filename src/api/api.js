@@ -48,3 +48,4 @@ export default {
   getNewList: "home/new", //首页-新鲜好物
   getHomeList: "home/hot", //首页-人气推荐
 };
+

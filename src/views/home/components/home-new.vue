@@ -7,24 +7,31 @@
             方式2：使用<template #right>简写-->
       <template #right><XtxMore path="/" /></template>
       <!-- 面板内容 -->
-      <ul class="goods-list">
-        <li v-for="item in goods" :key="item.id">
-          <RouterLink :to="`/product/${item.id}`">
-            <img :src="item.picture" alt="" />
-            <p class="name ellipsis">{{ item.name }}</p>
-            <!--  &yen; ===> ¥ 是日元符号 -->
-            <p class="price">&yen;{{ item.price }}</p>
-          </RouterLink>
-        </li>
-      </ul>
+      <!-- HomeSkeleton  记住需要包裹的组件,不要把template 不需要的组件包裹进去
+          而且Transition  必须有v-if    v-else 否则会报错-->
+      <Transition name="fade">
+        <ul class="goods-list" v-if="goods.length">
+          <li v-for="item in goods" :key="item.id">
+            <RouterLink :to="`/product/${item.id}`">
+              <img :src="item.picture" alt="" />
+              <p class="name ellipsis">{{ item.name }}</p>
+              <!-- &yen;  是日元符号 等于==> ¥2089.00 -->
+              <p class="price">&yen;{{ item.price }}</p>
+            </RouterLink>
+          </li>
+        </ul>
+        <HomeSkeleton v-else></HomeSkeleton>
+      </Transition>
     </HomePanel>
   </div>
 </template>
 
-<script setup>
+<script setup name="HomeNew">
 import { ref, getCurrentInstance, toRaw } from "vue";
 
 import HomePanel from "./home-panel.vue";
+import HomeSkeleton from "./home-skeleton.vue";
+
 defineOptions({
   name: "HomeNew",
 });

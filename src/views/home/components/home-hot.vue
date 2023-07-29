@@ -1,6 +1,7 @@
 <template>
   <HomePanel title="人气推荐" sub-title="人气爆款 不容错过">
-    <ul ref="pannel" class="goods-list">
+    <Transition  name="fade">
+    <ul ref="pannel" class="goods-list" v-if="list.length">
       <li v-for="item in list" :key="item.id">
         <RouterLink to="/">
           <img :src="item.picture" alt="" />
@@ -9,12 +10,15 @@
         </RouterLink>
       </li>
     </ul>
+   <HomeSkeleton v-else></HomeSkeleton>
+  </Transition>
   </HomePanel>
 </template>
 
 <script setup>
 import { ref, getCurrentInstance } from "vue";
 import HomePanel from "./home-panel.vue";
+import HomeSkeleton from "./home-skeleton.vue";
 
 defineOptions({
   name: "HomeHot",
