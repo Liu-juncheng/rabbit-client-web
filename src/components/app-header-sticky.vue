@@ -1,11 +1,11 @@
 <template>
-  <div class="app-header-sticky" :class="{ show : y >= 78}">
-    <div class="container"  v-show="y>=78">
+  <div class="app-header-sticky" :class="{ show: y >= 78 }">
+    <div class="container" v-show="y >= 78">
       <RouterLink class="logo" to="/" />
       <AppHeaderNav />
       <div class="right">
-        <RouterLink to="/" >品牌</RouterLink>
-        <RouterLink to="/" >专题</RouterLink>
+        <RouterLink to="/">品牌</RouterLink>
+        <RouterLink to="/">专题</RouterLink>
       </div>
     </div>
   </div>
@@ -14,15 +14,16 @@
 <script>
 // import { onMounted, ref } from 'vue';
 //通过vue3 npm i @vueuse/core@4.9.0 的工具库实现监听获取页面滚动的Y.X轴线的px值
-import AppHeaderNav from './app-header-nav'
-import { useWindowScroll } from '@vueuse/core'
+import AppHeaderNav from "./app-header-nav";
+//vue3 ueuse/core 库  必须配合组合式api!
+import { useWindowScroll } from "@vueuse/core";
 export default {
-  name: 'AppHeaderSticky',
+  name: "AppHeaderSticky",
   components: { AppHeaderNav },
   // setup() {
   //   const y = ref(null)   //当前的y轴线顶部卷曲的高度
   //   //监听当前顶部卷曲的高度
-  //   onMounted(() => { 
+  //   onMounted(() => {
   //     window.onscroll = () => {
   //     //获取当前鼠标Y轴滚动的距离
   //       const scrollTop = document.documentElement.scrollTop
@@ -31,15 +32,15 @@ export default {
   //   })
   //   return { y }
   // }
-   //基于vue3的npm i @vueuse/core@4.9.0 工具库,实现页面滚动监听,报错记得重新装依赖, npm install
-   setup () {
-    const { y } = useWindowScroll()
-    return { y }
-  }
-}
+  //基于vue3的npm i @vueuse/core@4.9.0 工具库,实现页面滚动监听,报错记得重新装依赖, npm install
+  setup() {
+    const { y } = useWindowScroll();
+    return { y };
+  },
+};
 </script>
 
-<style scoped lang='less'>
+<style scoped lang="less">
 .app-header-sticky {
   width: 100%;
   height: 80px;
@@ -57,7 +58,7 @@ export default {
     transition: all 0.3s linear;
     transform: none;
     opacity: 1;
-    }
+  }
   .container {
     display: flex;
     align-items: center;
@@ -65,7 +66,7 @@ export default {
   .logo {
     width: 200px;
     height: 80px;
-    background: url(../assets/images/logo.png) no-repeat  right 2px;
+    background: url(../assets/images/logo.png) no-repeat right 2px;
     background-size: 160px auto;
   }
   .right {
