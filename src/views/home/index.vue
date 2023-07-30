@@ -13,6 +13,8 @@
   <homeNew></homeNew>
   <!-- 人气推荐 -->
   <homeHot></homeHot>
+  <!-- 热门品牌 -->
+  <HomeBrand></HomeBrand>
 </template>
 
 <!-- 使用 setup语法糖, //components:{MyComponent}  不需要注册直接使用-->
@@ -42,6 +44,7 @@ import HomeCategory from "./components/home-category"; //左侧分类
 import HomeBanner from "./components/home-banner"; //轮播图
 import homeNew from "./components/home-new"; //新鲜推荐
 import homeHot from "./components/home-hot"; //人气推荐
+import HomeBrand from "./components/home-brand.vue"; //热门品牌
 </script>
 
 <style scoped lang="less"></style>

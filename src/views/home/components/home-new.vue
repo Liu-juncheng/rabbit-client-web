@@ -16,7 +16,7 @@
               <img :src="item.picture" alt="" />
               <p class="name ellipsis">{{ item.name }}</p>
               <!-- &yen; 是日元符号 等于==> ¥2089.00 -->
-              <p class="price">&yen;{{ item.price }}</p>
+              <p class="price">¥{{ item.price }}</p>
             </RouterLink>
           </li>
         </ul>

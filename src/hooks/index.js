@@ -21,16 +21,16 @@ export const useLazyData = (target, apiFn) => {
       // 如果进入可视区了
       if (isIntersecting) {
         //则立即停止监听
-          console.log("进入可视区了=========")
+          // console.log("进入可视区了=========")
         stop();
         //apiFn最终返回的是一个Promis的 调用API获取数据
           apiFn().then((data) => {
-            console.log("进入可视区后最终返回的数据",data)
+         // console.log("进入可视区后最终返回的数据",data)
             result.value = data;
         }).catch( err => err)
       }
     }
   );
-  // 返回--->数据（dom,后台数据）
+  // 返回给dom--->数据（dom,后台数据）
   return { result };
 };
