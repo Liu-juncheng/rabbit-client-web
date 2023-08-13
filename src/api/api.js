@@ -47,5 +47,6 @@ export default {
   getBannerList: "/home/banner", //首页-轮播图图片
   getNewList: "home/new", //首页-新鲜好物
   getHomeList: "home/hot", //首页-人气推荐
+  getGoodsList: "home/goods", //首页-商品区块
+  getSpecialList: "home/special", //首页-最新专题
 };
-

@@ -15,6 +15,10 @@
   <homeHot></homeHot>
   <!-- 热门品牌 -->
   <HomeBrand></HomeBrand>
+  <!-- 商品区域 -->
+  <HomeProduct />
+  <!-- 最新专题 -->
+  <HomeSpecial></HomeSpecial>
 </template>
 
 <!-- 使用 setup语法糖, //components:{MyComponent}  不需要注册直接使用-->
@@ -45,6 +49,8 @@ import HomeBanner from "./components/home-banner"; //轮播图
 import homeNew from "./components/home-new"; //新鲜推荐
 import homeHot from "./components/home-hot"; //人气推荐
 import HomeBrand from "./components/home-brand.vue"; //热门品牌
+import HomeProduct from "./components/home-product"; // 商品区块
+import HomeSpecial from "./components/home-special"; // 商品区块
 </script>
 
 <style scoped lang="less"></style>

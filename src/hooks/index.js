@@ -8,8 +8,8 @@ import { useIntersectionObserver } from "@vueuse/core";
 import { ref } from "vue";
 // 数据懒加载函数
 export const useLazyData = (target, apiFn) => {
-// target  是被监听的dom 对象
-//aipiFn 是一个获取数据的接口函数, 我这里返回的是一个 () => 自定义函数 通过 .then的方式将result数据返回给dom
+  // target  是被监听的dom 对象
+  //aipiFn 是一个获取数据的接口函数, 我这里返回的是一个 () => 自定义函数 通过 .then的方式将result数据返回给dom
 
   const result = ref([]); //最终返回的数据
   // stop 解构出停止观察函数
@@ -21,14 +21,20 @@ export const useLazyData = (target, apiFn) => {
       // 如果进入可视区了
       if (isIntersecting) {
         //则立即停止监听
-          // console.log("进入可视区了=========")
+        // console.log("进入可视区了=========")
         stop();
         //apiFn最终返回的是一个Promis的 调用API获取数据
-          apiFn().then((data) => {
-         // console.log("进入可视区后最终返回的数据",data)
+        apiFn()
+          .then((data) => {
+            // console.log("进入可视区后最终返回的数据",data)
             result.value = data;
-        }).catch( err => err)
+          })
+          .catch((err) => err);
       }
+    },
+    //配置对象,相交的比例大于0就触发,不能出现留白想象
+    {
+      threshold: 0,
     }
   );
   // 返回给dom--->数据（dom,后台数据）
