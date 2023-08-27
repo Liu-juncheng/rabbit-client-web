@@ -27,6 +27,20 @@ height: 100px;
 // 在当前项目下执行一下命令vue add style-resources-loader，添加一个vuecli的插件
 // 1,如遇警告,继续输入y即可  2,选择less作为预处理器
 
+  //less预处理的全局变量,混入,自动全局注入 ==> 配置
+  // pluginOptions: {
+  //   "style-resources-loader": {
+  //     preProcessor: "less",
+  //     //patterns需要读取的文件路径，必须使用绝对路径,
+  //     patterns: [
+  //       //path.join() 方法是用于修正路径,例如: ../../路径他是无法识别,而是用.join()则可以修复跳过读取下一级路径！
+  //       //__dirname 表示我们项目的根路径！
+  //       path.join(__dirname, "./src/assets/styles/variables.less"), //从这个文件路径读取 全局样书变量
+  //       path.join(__dirname, "./src/assets/styles/mixins.less"), //从这个文件读取全局混入
+  //     ],
+  //   },
+  // },
+
 //-------------------------------------------------------------------------------------------------------
 
 // 鼠标经过上移阴影动画
