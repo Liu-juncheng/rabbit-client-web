@@ -12,7 +12,8 @@
       <Transition name="fade">
         <ul class="goods-list" v-if="goods.length">
           <li v-for="item in goods" :key="item.id">
-            <RouterLink :to="`/product/${item.id}`">
+            <!-- <RouterLink :to="`/product/${item.id}`"> -->
+              <RouterLink to="#">
               <img :src="item.picture" alt="" />
               <p class="name ellipsis">{{ item.name }}</p>
               <!-- &yen; 是日元符号 等于==> ¥2089.00 -->
