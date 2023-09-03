@@ -2,19 +2,41 @@
 
 //导入需要组件在全局的组件
 // 这里使用的传统的方式,每一个全局的组件需要一个个的导入,后期将使用全局批量自动注册
-import XtxSkeleton from "./xtx-skeleton.vue";
-import XtxCarousel from "./xtx-carousel.vue";
-import xtxMore from "./xtx-more.vue";
-import defaultImg from "@/assets/images/200.png";
+// import XtxSkeleton from "./xtx-skeleton.vue";
+// import XtxCarousel from "./xtx-carousel.vue";
+// import xtxMore from "./xtx-more.vue";
+// import xtxBread from "./xtx-bread.vue"; //面包屑父级
+// import xtxBreadItem from "./xtx-bread-item.vue"; //面包屑父级
+import defaultImg from "@/assets/images/200.png"; //图片报错的默认图片
 
+// context()函数的参数,参数：1. 目录  2. 是否加载子目录  3. 加载的正则匹配
+const importFn = require.context("./", false, /\.vue$/);
+//omportFn()函数里有一个属性,这个属性keys()是个函数,是所有匹配.vue文件的集合数组
 export default {
   // vue2  vue3注册全局的组件/插件都使用install()方法，只不过是参数不同vue2使用vue,vue3使用app
+  //手动的一个个进行注册，不推荐,后续使用自动读取注册
   install(app) {
     //   app.component('XtxSkeleton',XtxSkeleton)  方式一
-    app.component(XtxSkeleton.name, XtxSkeleton); //方式二
-    app.component(XtxCarousel.name, XtxCarousel);
-    app.component(xtxMore.name, xtxMore);
-    //将图片懒加载自定义指令挂载在全局
+    // app.component(XtxSkeleton.name, XtxSkeleton); //方式二
+    // app.component(XtxCarousel.name, XtxCarousel);
+    // app.component(xtxMore.name, xtxMore);
+    // app.component(xtxBread.name, xtxBread);
+    // app.component(xtxBreadItem.name, xtxBreadItem);
+
+    //vue3通过自动注册全局组件,不再手动手动注册了
+    // 导入library文件夹下的所有组件
+    // 批量导入需要使用一个函数 require.context(dir,deep,matching)
+    // 参数：1. 目录  2. 是否加载子目录  3. 加载的正则匹配
+    // 批量注册全局组件
+    importFn.keys().forEach((key) => {
+      // 导入组件  //拿到获取所有的组件
+      // console.log("每一项key其实就是被遍历的组件名",key)
+      const component = importFn(key).default;
+      //注册所有的组件
+      app.component(component.name, component);
+    });
+
+    //将图片懒加载自定义指令挂载在全局,defineDirective()用于注册全局自定义指令
     defineDirective(app);
   },
 };

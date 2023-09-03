@@ -5,21 +5,17 @@
     <i class="iconfont icon-angle-right"></i>
   </RouterLink>
 </template>
-
-<!-- <script>
+<script>
 import { defineProps } from "vue";
 export default {
   name: "XtxMore",
 };
-</script> -->
+</script>
 
 <!-- name="xtxMore" 在vue-cli脚手架 不支持 -->
 <script setup name="xtxMore">
-import { defineProps } from "vue";
+
 //vue-clie脚手架使用注册name属性,或者如上写两个script标签！！
-defineOptions({
-  name: "XtxMore",
-});
 
 //props参数
 const props = defineProps({
