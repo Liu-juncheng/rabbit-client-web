@@ -14,7 +14,7 @@ const routes = [
       { path: '/', component: Home },
       { path: '/category/:id', component: TopCategory },
       { path: '/category/sub/:id', component: SubCategory },
-      // { path: '/Product/sub/:id', component: Product },
+      { path: '/Product/:id', component: Product },
     ],
   },
 ];
