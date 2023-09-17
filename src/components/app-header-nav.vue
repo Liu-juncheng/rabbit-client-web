@@ -5,7 +5,7 @@
     <li
       v-for="item in list"
       :key="item.id"
-      @mouseenter="show(item)"
+      @mousemove="show(item)"
       @mouseleave="hide(item)"
     >
       <!-- @click="hide(item)" 鼠标点击时,也会将其隐藏  -->

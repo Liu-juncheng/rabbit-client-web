@@ -4,7 +4,11 @@
       <!-- 面包屑 -->
       <XtxBread>
         <XtxBreadItem to="/">首页</XtxBreadItem>
-        <XtxBreadItem>{{ TopCategory.name }}</XtxBreadItem>
+        <transition name="fade-right" mode="out-in">
+          <XtxBreadItem :key="TopCategory.id">{{
+            TopCategory.name
+          }}</XtxBreadItem>
+        </transition>
       </XtxBread>
       <!-- 轮播图 -->
       <XtxCarousel :sliders="sliders" style="height: 500px" />
@@ -99,7 +103,8 @@ watch(
   //监听对象属性必须用回调函数的形式
   () => route.params.id,
   (val) => {
-    if (val) getSubCategory();
+    //存在顶级id,并且路由地址的是一级分类路由地址,当前只请求一级分类路由地址！
+    if (val && `/category/${val}` === route.path) getSubCategory();
   },
   {
     immediate: true, //进入该组件页面,立即监听

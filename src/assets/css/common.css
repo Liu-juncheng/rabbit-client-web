@@ -97,3 +97,21 @@ ul {
 .fade-leave-to {
   opacity: 0;
 }
+
+/* 
+面包屑一级 二级分类 transion 动添组件动画效果
+*/
+.fade-right-enter-to,
+.fade-right-leave-from{
+  opacity: 1;
+  transform:translateX(20px);
+}
+.fade-right-enter-active,
+.fade-right-leave-active{
+  transition: all .5s;
+}
+.fade-right-enter-from,
+.fade-right-leave-to{
+  opacity: 0;
+  transform: translate3d(20px,0,0);
+}
