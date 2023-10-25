@@ -42,7 +42,7 @@ export const saveDetailByIdAPI = (data) => {
 //3,在公司的项目,封装模式是我喜欢的,我目前按照公司的封装来进行写该函数
 export default {
   //首页模块
-  findAllCategory: "/home/category/head", //首页-获取所有顶级分类集合 
+  findAllCategory: "/home/category/head", //首页-获取所有顶级分类集合
   getBrandList: "/home/brand", //首页-左侧导航-品牌分类
   getBannerList: "/home/banner", //首页-轮播图图片
   getNewList: "home/new", //首页-新鲜好物
@@ -51,5 +51,7 @@ export default {
   getSpecialList: "home/special", //首页-最新专题
 
   //分类模块
-  getCategory:'/category',
+  getCategory: "/category",
+  filterCateGory: "/category/sub/filter", //过滤分类
+  getGoodsTemporaryList: "category/goods/temporary", //获取分类下的商品,待筛选条件
 };
