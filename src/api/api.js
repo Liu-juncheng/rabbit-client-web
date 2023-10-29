@@ -54,4 +54,7 @@ export default {
   getCategory: "/category",
   filterCateGory: "/category/sub/filter", //过滤分类
   getGoodsTemporaryList: "category/goods/temporary", //获取分类下的商品,待筛选条件
+
+  //商品详情
+  findGoods: "/goods", //获取商品详情
 };

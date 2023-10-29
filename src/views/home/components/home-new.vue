@@ -13,7 +13,7 @@
         <ul class="goods-list" v-if="goods.length">
           <li v-for="item in goods" :key="item.id">
             <!-- <RouterLink :to="`/product/${item.id}`"> -->
-              <RouterLink to="#">
+            <RouterLink :to="`/product/${item.id}`">
               <img :src="item.picture" alt="" />
               <p class="name ellipsis">{{ item.name }}</p>
               <!-- &yen; 是日元符号 等于==> ¥2089.00 -->
@@ -47,7 +47,7 @@ const {
 
 // 使用useLazyData处理数据懒加载逻辑
 
- useLazyData(target, () => {
+useLazyData(target, () => {
   return $http.get($api.getNewList).then((data) => {
     // goods.value 是最终返回给模板进行渲染的
     //此时的goods.vule虽然有值,但是还没被渲染!
@@ -55,9 +55,7 @@ const {
     //把请求到的data 数据返回, 由最终的userLazyData决定是否进行懒加载!
     return data;
   });
- });
-  
-
+});
 </script>
 
 <style scoped lang="less">

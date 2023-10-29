@@ -50,7 +50,7 @@ export default {
 import XtxBread from "@/components/library/xtx-bread.vue";
 import { getCurrentInstance, onMounted, ref, computed, watch } from "vue";
 import { useStore } from "vuex";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 //全局注册的组件是不需要导入的,而当前目录下的子组件是需要导入的
 //记住在vue3中子组件只需要导入即可,是不需要通过components去注册的.直接在模板使用即可
 import GoodsItem from "./components/goos-item.vue";

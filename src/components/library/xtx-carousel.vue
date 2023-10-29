@@ -10,7 +10,7 @@
         :key="i"
         :class="{ fade: i === index }"
       >
-        <RouterLink to="/">
+        <RouterLink :to="`/product/${item.id}`">
           <!-- 图片 -->
           <img :src="item.imgUrl" alt="" />
         </RouterLink>

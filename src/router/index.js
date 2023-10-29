@@ -4,17 +4,18 @@ const Layout = () => import("@/views/Layout");
 const Home = () => import("@/views/home");
 const TopCategory = () => import("@/views/category/index");
 const SubCategory = () => import("@/views/category/sub");
-const Product = () => import("@/views/home/components/home-product");
+const Goods = () => import("@/views/goods/index");
 
 const routes = [
   {
     path: "/",
-    component: Layout,
+    component: Layout, //一级路由,包含整体的页面布局
+    //二级路由,父级路由下的子路由,包含子内容！
     children: [
       { path: "/", component: Home },
       { path: "/category/:id", component: TopCategory },
       { path: "/category/sub/:id", component: SubCategory },
-      { path: "/Product/:id", component: Product },
+      { path: "/product/:id", component: Goods },
     ],
   },
 ];
